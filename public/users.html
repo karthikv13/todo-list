@@ -1,0 +1,12 @@
+<h2>Users using this APP</h2>
+<ul>
+    <li ng-repeat="user in users">
+        <a href="#/users/{{$index}}">{{user.name}}</a>
+    </li>
+</ul>
+<h3>Tasks assigned to users are:</h3>
+<ul>
+	<li ng-repeat="list in todolist">
+		<p>Task {{list.name}} is assigned to {{users[list.assigned].name}}</p>
+	</li>
+</ul>

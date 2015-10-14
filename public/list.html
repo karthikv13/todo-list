@@ -1,0 +1,18 @@
+<input type="text" placeholder="Enter a task" ng-model="new_task">
+		<button class="btn-primary" ng-click="add()">Add</button>
+		<ul>
+			<li ng-repeat="todo in userlist">
+				<input type="checkbox" class="strikethrough" ng-model="check" ng-disabled="check">
+				<label>{{todo.name}}</label>
+				<div class="dropdown">
+				  <label data-toggle="dropdown">
+				    {{users[todo.assigned].name}}
+				    <span class="caret"></span>
+				  </label>
+				  <ul class="dropdown-menu">
+				    <li ng-repeat="otherUser in users">
+				    	<a href="#/users/{{$index}}" ng-click="addTask($index,todo.parentId)">{{otherUser.name}}</a></li>
+				  </ul>
+				</div>
+			</li>
+		</ul>
